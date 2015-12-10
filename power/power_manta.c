@@ -59,6 +59,9 @@ static bool low_power_mode = false;
 
 static void sysfs_write(const char *path, char *s)
 {
+    // ignore all changes to the max frequency
+    if (strcmp(path, CPU_MAX_FREQ_PATH) == 0) { return; }
+
     char buf[80];
     int len;
     int fd = open(path, O_WRONLY);

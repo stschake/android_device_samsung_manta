@@ -1,4 +1,5 @@
 import init.manta.usb.rc
+import init.rtandroid.rc
 
 on init
     start watchdogd
